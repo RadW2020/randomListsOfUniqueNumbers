@@ -1,24 +1,67 @@
-function crearSesentaNumerosIniciales(): number[] {
-    let arr = [];
-    // creamos 40 numeros unicos
-    for (let i=1; i<=40; i++) {
-        arr.push(i);
-    }
-    // añadimos 15 numeros que ya existen
-    for (let i=1; i<=15; i++) {
-        arr.push(i);
-    }
-    // añadimos 5 numeros que ya existen (estos serán los triplicados)
-    for (let i=1; i<=5; i++) {
-        arr.push(i);
-    }
-    // esto es una lista de 60 valres donde los numeros del 1 al 5 son triplicados
-    // los numeros de 6 al 15 son duplicados
-    // el resto son únicos
-    return  arr;
-}
+let listaCorreo = [
+    '36591 -1',
+'36591 -2',
+'36591 -3',
+'36592 -1',
+'36592 -2',
+'36592 -3',
+'36593 -1',
+'36593 -2',
+'36593 -3',
+'36594 -1',
+'36594 -2',
+'36594 -3',
+'36595 -1',
+'36595 -2',
+'36595 -3',
+'36596 -1',
+'36596 -2',
+'36596 -3',
+'36597 -1',
+'36597 -2',
+'36597 -3',
+'36598 -1',
+'36598 -2',
+'36598 -3',
+'36599 -1',
+'36599 -2',
+'36599 -3',
+'36600 -1',
+'36600 -2',
+'36600 -3',
+'36601 -1',
+'36601 -2',
+'36601 -3',
+'36602 -1',
+'36602 -2',
+'36602 -3',
+'36603 -1',
+'36603 -2',
+'36604 -1',
+'36604 -2',
+'36605 -1',
+'36605 -2',
+'36606 -1',
+'36606 -2',
+'36607 -1',
+'36607 -2',
+'36608 -1',
+'36608 -2',
+'36609 -1',
+'36609 -2',
+'36610 -1',
+'36610 -2',
+'36611 -1',
+'36611 -2',
+'36612 -1',
+'36612 -2',
+'36613 -1',
+'36613 -2',
+'36614 -1',
+'36614 -2'
+];
 
-function shuffle(array: number[]) {
+function shuffle(array: string[]) {
   let currentIndex = array.length,  randomIndex;
 
   // While there remain elements to shuffle.
@@ -36,15 +79,17 @@ function shuffle(array: number[]) {
   return array;
 }
 
-function creaTresListas(arr: number[]): number[][] {
-    let listas: number[][] = [[],[],[]];
+let listas: string[][] = [[],[],[]];
 
-    arr.forEach((n: number)=> {
-        if(!listas[0].includes(n) && listas[0].length <= 20) {
-            listas[0].push(n)
-        } else if (!listas[1].includes(n) && listas[1].length <= 20) {
+function creaTresListas(arr: string[]): string[][] {
+    
+
+    arr.forEach((n: string)=> {
+        if(!listas[0].includes(n) && listas[0].length <= listaCorreo.length /3) {
+            listas[0].push(n);
+        } else if (!listas[1].includes(n) && listas[1].length <= listaCorreo.length/3) {
             listas[1].push(n);
-        } else (listas[2].length <= 20) {
+        } else if (listas[2].length <= listaCorreo.length/3) {
             listas[2].push(n);
         }
     })
@@ -52,9 +97,13 @@ function creaTresListas(arr: number[]): number[][] {
     return listas;
 };
 
-const listaDeNumerosConDuplicadosYTriplicados = shuffle(crearSesentaNumerosIniciales());
+const listaCorreoAleatorizada = shuffle(listaCorreo);
 
-const resultado = creaTresListas(listaDeNumerosConDuplicadosYTriplicados);
-console.log(listaDeNumerosConDuplicadosYTriplicados);
-console.log('---------------------')
-console.log(resultado);
+const resultado = creaTresListas(listaCorreoAleatorizada);
+
+console.log('-0--------------------')
+listas[0].forEach(x => console.log(x))
+console.log('-1--------------------')
+listas[1].forEach(x => console.log(x))
+console.log('-2--------------------')
+listas[2].forEach(x => console.log(x))
