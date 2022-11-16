@@ -82,12 +82,7 @@ function shuffle(array: string[]) {
 let listas: string[][] = [[],[],[]];
 
 function creaTresListas(arr: string[]): string[][] {
-    
-
     arr.forEach((n: string)=> {
-        console.log(n.substring(0,5));
-        console.log(listas[0].findIndex(x => x.includes(n.substring(0,5)));
-        console.log(listas[1].findIndex(x => x.includes(n.substring(0,5)));
         if(listas[0].findIndex(x => x.includes(n.substring(0,5))) == -1 && listas[0].length < listaCorreo.length /3) {
             listas[0].push(n);
         } else if (listas[1].findIndex(x => x.includes(n.substring(0,5))) == -1 && listas[1].length < listaCorreo.length/3) {
@@ -96,7 +91,7 @@ function creaTresListas(arr: string[]): string[][] {
             listas[2].push(n);
         }
     })
-        
+    
     return listas;
 };
 
