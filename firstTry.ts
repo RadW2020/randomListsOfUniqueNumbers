@@ -85,9 +85,12 @@ function creaTresListas(arr: string[]): string[][] {
     
 
     arr.forEach((n: string)=> {
-        if(!listas[0].includes(n) && listas[0].length < listaCorreo.length /3) {
+        console.log(n.substring(0,5));
+        console.log(listas[0].findIndex(x => x.includes(n.substring(0,5)));
+        console.log(listas[1].findIndex(x => x.includes(n.substring(0,5)));
+        if(listas[0].findIndex(x => x.includes(n.substring(0,5))) == -1 && listas[0].length < listaCorreo.length /3) {
             listas[0].push(n);
-        } else if (!listas[1].includes(n) && listas[1].length < listaCorreo.length/3) {
+        } else if (listas[1].findIndex(x => x.includes(n.substring(0,5))) == -1 && listas[1].length < listaCorreo.length/3) {
             listas[1].push(n);
         } else if (listas[2].length < listaCorreo.length/3) {
             listas[2].push(n);
