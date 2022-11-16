@@ -1,5 +1,5 @@
 let listaCorreo = [
-    '36591 -1',
+'36591 -1',
 '36591 -2',
 '36591 -3',
 '36592 -1',
@@ -85,11 +85,11 @@ function creaTresListas(arr: string[]): string[][] {
     
 
     arr.forEach((n: string)=> {
-        if(!listas[0].includes(n) && listas[0].length <= listaCorreo.length /3) {
+        if(!listas[0].includes(n) && listas[0].length < listaCorreo.length /3) {
             listas[0].push(n);
-        } else if (!listas[1].includes(n) && listas[1].length <= listaCorreo.length/3) {
+        } else if (!listas[1].includes(n) && listas[1].length < listaCorreo.length/3) {
             listas[1].push(n);
-        } else if (listas[2].length <= listaCorreo.length/3) {
+        } else if (listas[2].length < listaCorreo.length/3) {
             listas[2].push(n);
         }
     })
