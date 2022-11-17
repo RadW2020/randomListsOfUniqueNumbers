@@ -24,10 +24,6 @@ function shuffle(array: string[]) {
 }
 
 let listas: string[][] = [[],[],[]];
-let counterLista0deUnos = 0;
-let counterLista0deDoses = 0; 
-let counterLista1deUnos = 0;
-let counterLista1deDoses = 0; 
 
 function creaTresListas(arr: string[]): string[][] {
     console.log(arr)
@@ -52,24 +48,12 @@ function creaTresListas(arr: string[]): string[][] {
 const listaCorreoOrdenada = listaCorreo.sort();
 const resultado = creaTresListas(listaCorreoOrdenada);
 
-let une = '\n';
-let due = '\n';
-let troli = '\n';
+listas.forEach((x,i) => console.log(`${findDuplicates(x) ? 'si' : 'no '} hay duplicados en la lista ${i}`));
 
-console.log(`${findDuplicates(listas[0]) ? 'si' : 'no '} hay duplicados en la lista 0`);
-console.log(`${findDuplicates(listas[1]) ? 'si' : 'no '} hay duplicados en la lista 1`);
-console.log(`${findDuplicates(listas[2]) ? 'si' : 'no '} hay duplicados en la lista 2`);
 
-console.log('-0--------------------')
-listas[0].forEach(x => une = une + x +'\n')
-console.log(une)
-console.log('-1--------------------')
-listas[1].forEach(x => due = due + x +'\n')
-console.log(due)
-console.log('-2--------------------')
-listas[2].forEach(x => troli = troli + x +'\n')
-console.log(troli)
-console.log('-DUP------------------')
+let foo = ['lista0\n', 'lista1\n', 'lista2\n']
+listas.forEach((x,i)=>x.forEach(z => foo[i] = foo[i] + z +'\n'))
+foo.forEach(x => console.log(x))
 
 function findDuplicates(arr: string[]) {
     let newArr = arr.map(x => x.substring(0,5))
@@ -98,42 +82,14 @@ aleatorFlojo(listas[0], listas[1]);
 aleatorFlojo(listas[0], listas[2]);
 aleatorFlojo(listas[1], listas[2]);
 
-une = '\n';
-due = '\n';
-troli = '\n';
+foo = ['lista0\n', 'lista1\n', 'lista2\n']
+listas.forEach((x,i)=>x.forEach(z => foo[i] = foo[i] + z +'\n'))
+foo.forEach(x => console.log(x))
 
-console.log('-0-ale-------------------')
-listas[0].forEach(x => une = une + x +'\n')
-console.log(une)
-console.log('-1-ale-------------------')
-listas[1].forEach(x => due = due + x +'\n')
-console.log(due)
-console.log('-2-ale-------------------')
-listas[2].forEach(x => troli = troli + x +'\n')
-console.log(troli)
-console.log('-DUP------------------')
-console.log(`${findDuplicates(listas[0]) ? 'si' : 'no '} hay duplicados en la lista 0`);
-console.log(`${findDuplicates(listas[1]) ? 'si' : 'no '} hay duplicados en la lista 1`);
-console.log(`${findDuplicates(listas[2]) ? 'si' : 'no '} hay duplicados en la lista 2`);
+listas.forEach(x => shuffle(x))
 
+foo = ['lista0\n', 'lista1\n', 'lista2\n']
+listas.forEach((x,i)=>x.forEach(z => foo[i] = foo[i] + z +'\n'))
+foo.forEach(x => console.log(x))
 
-listas[0] = shuffle(listas[0]);
-listas[1] = shuffle(listas[1]);
-listas[2] = shuffle(listas[2]);
-une = '\n';
-due = '\n';
-troli = '\n';
-
-console.log('-0-ale-shuffle------------------')
-listas[0].forEach(x => une = une + x +'\n')
-console.log(une)
-console.log('-1-ale-shuffle------------------')
-listas[1].forEach(x => due = due + x +'\n')
-console.log(due)
-console.log('-2-ale-shuffle------------------')
-listas[2].forEach(x => troli = troli + x +'\n')
-console.log(troli)
-console.log('-DUP------------------')
-console.log(`${findDuplicates(listas[0]) ? 'si' : 'no '} hay duplicados en la lista 0`);
-console.log(`${findDuplicates(listas[1]) ? 'si' : 'no '} hay duplicados en la lista 1`);
-console.log(`${findDuplicates(listas[2]) ? 'si' : 'no '} hay duplicados en la lista 2`); 
+listas.forEach((x,i) => console.log(`${findDuplicates(x) ? 'si' : 'no '} hay duplicados en la lista ${i}`))
